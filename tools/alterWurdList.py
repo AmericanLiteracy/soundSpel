@@ -1,8 +1,10 @@
 fileNameIn = 'soundSpelWurdList.csv'
 fileNameOut = 'editedSoundSpelWurdList.csv'
+
 #get file object
 fileIn = open(fileNameIn, 'r')
 fileOut = open(fileNameOut, 'w')
+nLinesAltered = 0
 
 while(True):
     #read next lineIn
@@ -11,10 +13,16 @@ while(True):
     if not lineIn:
         break
     # alter line
-    lineOut = lineIn
+    nCommas = lineIn.count(',')
+    if nCommas == 1:
+        lineOut = lineIn.rstrip('\n') + 'NO_TRANSLATION,!\n'
+        nLinesAltered += 1
+    else:
+        lineOut = lineIn
     # write out line
     fileOut.write(lineOut)
 
+print ('nLinesAltered = ',nLinesAltered)
 #close file
 fileIn.close
 fileOut.close
