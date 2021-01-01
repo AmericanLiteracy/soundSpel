@@ -1,4 +1,4 @@
-traditional spelling,soundSpel,,short note,alternates,British,long note
+1:traditional spelling,2:soundSpel,3:short note,4:alternates,5:British,6:long note
 a’a,aa’aa,*,,
 aa,aa’aa,*,,
 aah,aa,,,
@@ -4366,7 +4366,7 @@ chattered,chaterd,,,
 chattering,chatering,,,
 chatters,chaters,,,
 chatting,chating,,,
-chauffeur,shoefuurBrit: shoefer,,,
+chauffeur,shoefuur,,,shoefer
 chauffeured,shoeferd,,,
 chauffeuring,shoefering,,,
 chauffeurs,shoefers,,,
@@ -55058,8 +55058,8 @@ varnish’s,varnish’es,,,
 vary,vaery,,,
 varying,vaerying,,,
 vascular,vascuelar,*,,
-vase,vaessBrit: vaaz,,,
-vases,vaesesBrit: vaazes,,,
+vase,vaess,,,vaaz
+vases,vaeses,,,vaazes
 vasectomies,vasektomys,,,
 vasectomies’,vasektomys’,,,
 vasectomy,vasektomy,,,
@@ -55558,8 +55558,7 @@ virginity’s,verjinity’s,,,
 virgins,vurjins,,,
 virgin’s,vurjin’s,,,
 virgins’,vurjins’,,,
-virile,viril,,,
-virile,viriel [Chiefly British],,,
+virile,viril,,,viriel
 virilities,virilitys,,,
 virilities’,virilitys’,,,
 virility,virility,,,
@@ -58120,14 +58119,10 @@ zealous,zelus,,,
 zealously,zelusly,,,
 zealousness,zelusnes,,,
 zeal’s,zeel’s,,,
-zebra,zebra [Brit. pron.],,,
-zebra,zeebra [Amer. pron],,,
-zebra’s,zebra’s [Brit. pron.],,,
-zebra’s,zeebra’s [Amer. pron],,,
-zebras,zebras [Brit. pron.],,,
-zebras,zeebras [Amer. pron],,,
-zebras’,zebras’[Brit. pron.],,,
-zebras’,zeebras’[Amer. pron],,,
+zebra,zeebra,,,zebra
+zebra’s,zeebra’s,,,zeebra
+zebras,zeebras,,,zebras
+zebras’,zeebras’,,,zebras’
 zebu,zeeboo,,,
 zebus,zeeboos,,,
 zebu’s,zeeboo’s,,,
