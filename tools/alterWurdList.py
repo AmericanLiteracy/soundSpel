@@ -14,13 +14,15 @@ while(True):
         break
     # alter line
     nCommas = lineIn.count(',')
-    if nCommas == 1:
-        lineOut = lineIn.rstrip('\n') + 'NO_TRANSLATION,!\n'
+    if nCommas == 8:
+        #lineOut = lineIn.rstrip('\n') + 'NO_TRANSLATION,!\n'
+        fileOut.write(lineIn)
         nLinesAltered += 1
     else:
-        lineOut = lineIn
+        pass
+        #lineOut = lineIn
     # write out line
-    fileOut.write(lineOut)
+    #fileOut.write(lineOut)
 
 print ('nLinesAltered = ',nLinesAltered)
 #close file
