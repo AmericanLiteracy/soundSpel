@@ -14,7 +14,7 @@ while(True):
         break
     # alter line
     nCommas = lineIn.count(',')
-    if nCommas == 8:
+    if nCommas == 6:
         #lineOut = lineIn.rstrip('\n') + 'NO_TRANSLATION,!\n'
         fileOut.write(lineIn)
         nLinesAltered += 1
