@@ -4,6 +4,7 @@ fileNameOut = 'editedSoundSpelWurdList.csv'
 #get file object
 fileIn = open(fileNameIn, 'r')
 fileOut = open(fileNameOut, 'w')
+iLine=1
 nLinesAltered = 0
 
 while(True):
@@ -14,15 +15,17 @@ while(True):
         break
     # alter line
     nCommas = lineIn.count(',')
-    if nCommas == 6:
+    if nCommas !=7:
         #lineOut = lineIn.rstrip('\n') + 'NO_TRANSLATION,!\n'
-        lineOut = lineIn.rstrip(',,,,,,\n') + ',NO_TRANSLATION,!,,,,,\n'
+        #lineOut = lineIn.rstrip(',,,,,,\n') + ',NO_TRANSLATION,!,,,,,\n'
         #fileOut.write(lineIn)
+        print('not 7 commas, line:'+str(iLine)+'  '+lineIn)
         nLinesAltered += 1
     else:
         lineOut = lineIn
     # write out line
-    fileOut.write(lineOut)
+    #fileOut.write(lineOut)
+    iLine+=1
 
 print ('nLinesAltered = ',nLinesAltered)
 #close file
