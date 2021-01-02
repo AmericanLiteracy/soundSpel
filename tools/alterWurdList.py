@@ -16,13 +16,13 @@ while(True):
     nCommas = lineIn.count(',')
     if nCommas == 6:
         #lineOut = lineIn.rstrip('\n') + 'NO_TRANSLATION,!\n'
-        fileOut.write(lineIn)
+        lineOut = lineIn.rstrip(',,,,,,\n') + ',NO_TRANSLATION,!,,,,,\n'
+        #fileOut.write(lineIn)
         nLinesAltered += 1
     else:
-        pass
-        #lineOut = lineIn
+        lineOut = lineIn
     # write out line
-    #fileOut.write(lineOut)
+    fileOut.write(lineOut)
 
 print ('nLinesAltered = ',nLinesAltered)
 #close file
