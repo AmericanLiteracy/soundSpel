@@ -1,15 +1,20 @@
-fileNameIn = 'soundSpelWurdList.csv'
-fileNameOut = 'twoColSoundSpelWurdList.csv'
+fileNameIn = 'soundSpel.csv'
+fileNameOut = 'twoColSoundSpel.csv'
 
 #get file object
 fileIn = open(fileNameIn, 'r')
 fileOut = open(fileNameOut, 'w')
 iLine=1
 
+# remove header line
+lineIn = fileIn.readline().rstrip('\n')
 while(True):
     #read next lineIn
     lineIn = fileIn.readline().rstrip('\n')
-    #if lineIn is empty, you are done with all lineIns in the file
+    # Skip letter headers
+    if '[' in lineIn:
+        continue
+    # end at last line of file
     if not lineIn:
         break
 # 0TS,1soundSpel,2note,3alternatives,4British,5multiple TS,6multiple SS,7long note,8Rondthaler,9pronunciation
