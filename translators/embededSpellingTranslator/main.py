@@ -1,9 +1,15 @@
-# Translates from traditional spelling to soundSpel
+# Translates from traditional spelling to another system
 # Mark Petersen, American Literacy Council
-# Feb 2021
-import pickle
+# May 2021
 
-standardToReform = pickle.load( open( 'soundSpel.pickle', 'rb' ) )
+import csv
+import string as str
+
+dictionary = {}
+with open('dictionary.csv', encoding='UTF-8', newline='') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    for row in csv_reader:
+      dictionary[row[0]] = row[1]
 
 def soundSpel(x):
   y=[]
@@ -31,7 +37,7 @@ def soundSpel(x):
 
       # Translate word to reform spelling.
       try:
-        reformWord = standardToReform[word]
+        reformWord = dictionary[word]
 
         # Keep upper case the same as the original
         if x[iBeg:i].istitle():
@@ -65,3 +71,4 @@ print("\x1b[0;96mType or paste your text, press enter. You can enter multiple li
 while True:
   x = input()
   print(soundSpel(x))
+
