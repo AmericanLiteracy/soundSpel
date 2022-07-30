@@ -1,0 +1,22 @@
+s spreadsheet contains the 100,000 word list (http://www.wordfrequency.info/100k.asp) that is based on the Corpus of Contemporary American English (COCA; http://corpus.byu.edu/coca/) and other corpora (http://corpus.byu.edu). 
+	"
+This copy of the data cannot be shared with others. Note also that a small change has been made to the data in this spreadsheet to indentify you as the source of the spreadsheet. 
+"
+Column	"The spreadsheet includes a great deal of data from several different corpora. You can sort and limit by any of these columns or combination of these columns, to create your own customized word lists. Examples might be all words sorted by the BNC, or a specific genre in COCA or the BNC (e.g. academic or newspapers). You can also create new columns that are a ratio of two columns: e.g. COCA compared to the BNC, COCA academic compared to COCA overall, COCA compared to COHA, etc.
+"
+A	ID (rank order), 1-100,000
+B	Word
+C	Lemma (e.g. go for the words gone or went, or book for the word books, or quick for the word quicker)
+D	Part of speech. This is the first letter from the codes at http://ucrel.lancs.ac.uk/claws7tags.html
+E	Percent of tokens that are capitalized. This lets you see whether the word occurs mainly in proper noun-like contexts, like Ravens (the Baltimore Ravens team v the actual animal), March (the month vs. a walk), Brown (the surname vs the adjective), Beach (in place names like Daytona Beach), AIDS (the disease vs e.g. visual aids), or Rice (the university or surname vs the food). Note that some words have a high degree of capitalization simply because they occur primarily at the beginning of sentences, e.g. Hello or Unfortunately.
+F	Whether the word is an American or British spelling
+H	Raw frequency (# tokens) in the 450 million word Corpus of Contemporary American English (http://corpus.byu.edu/coca)
+I	Frequency (per million words) in the 450 million word Corpus of Contemporary American English (http://corpus.byu.edu/coca)
+J	Frequency (per million words) in the 100 million word British National Corpus (http://corpus.byu.edu/bnc)
+K	Frequency (per million words) in the 100 million word Corpus of American Soap Operas (http://corpus2.byu.edu/soap)
+L-N	Frequency (per million words) in the Corpus of Historical American English (http://corpus.byu.edu/coha): 1950-1989, 1900-1949, and 1810-1899
+O-S	Frequency (per million words) in COCA genres: spoken, fiction, popular magazines, newspapers, and academic journals
+T-Z	Frequency (per million words) in BNC genres: spoken, fiction, popular magazines, newspapers, non-academic journals, academic journals, and miscellaneous
+AB-AS	Percentage of texts (0.00-1.00) that contain the word at least once: 1) COCA, BNC, SOAP [overall]   2) COHA time periods   3) COCA genres   4) BNC genres
+AU-BK	Raw token frequency in BNC, SOAP, COHA, COCA genres and BNC genres: the basis for Columns K-AB
+bM-CD	Raw number of texts in COCA, BNC, SOAP, COHA, COCA genres and BNC genres: the basis for Columns AD-BM
