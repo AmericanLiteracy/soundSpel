@@ -31,7 +31,7 @@ cocaWordNotFoundBlank = []
 cocaRootNotFound = []
 cocaIDNotFound = []
 cocaFreqNotFound = []
-for i in range(len(cocaWord)):
+for i in range(100,len(cocaWord)):
     try:
         cocaWordSS.append(ssDict[cocaWord[i]])
     except:
@@ -40,30 +40,37 @@ for i in range(len(cocaWord)):
         cocaWordNotFound.append(cocaWord[i])
         cocaWordNotFoundss.append(ssString)
         cocaWordNotFoundBlank.append('')
-        cocaRootNotFound.append(cocaRoot[i])
+        if cocaRoot[i]==cocaWord[i]:
+            cocaRootNotFound.append('')
+        else:
+            cocaRootNotFound.append(cocaRoot[i])
         cocaIDNotFound.append(cocaID[i])
-        cocaFreqNotFound.append(cocaFreqPerMil[i])
+        if cocaFreqPerMil[i] > 10*cocaFreqPerMil[i-1]:
+            cocaFreqNotFound.append(cocaFreqPerMil[i-1])
+        else:
+            cocaFreqNotFound.append(cocaFreqPerMil[i])
+
 
 
 df = pd.DataFrame()
 df['TO']  = cocaWordNotFound
 df['SS'] = cocaWordNotFoundBlank
-df['root']  = cocaRootNotFound
 df['freq rank']  = cocaIDNotFound
 df['freq per Mil']  = cocaFreqNotFound
+df['root if differs']  = cocaRootNotFound
 df.to_csv('workdir/coca_ordered_missing_soundSpel_20k.csv', index=False, header=True)
 
-df = pd.DataFrame()
-df['cocaWordNotFound']  = cocaWordNotFound
-df['cocaWordNotFoundss']  = cocaWordNotFoundss
-df.to_csv('workdir/coca_ordered_not_found_20k.csv', index=False)
-
-df = pd.DataFrame()
-df['cocaOrder']  = cocaID
-df['cocaWord']  = cocaWord
-df['soundSpel'] = cocaWordSS
-df['cocaRoot']  = cocaRoot
-df['cocaFreqPerMil']  = cocaFreqPerMil
-df.to_csv('workdir/coca_ordered_soundSpel_20k.csv', index=False)
-# grep NOT --color=never coca_ordered_soundSpel_20k.csv> not_in_soundSpel.csv
-
+#df = pd.DataFrame()
+#df['cocaWordNotFound']  = cocaWordNotFound
+#df['cocaWordNotFoundss']  = cocaWordNotFoundss
+#df.to_csv('workdir/coca_ordered_not_found_20k.csv', index=False)
+#
+#df = pd.DataFrame()
+#df['cocaOrder']  = cocaID
+#df['cocaWord']  = cocaWord
+#df['soundSpel'] = cocaWordSS
+#df['cocaRoot']  = cocaRoot
+#df['cocaFreqPerMil']  = cocaFreqPerMil
+#df.to_csv('workdir/coca_ordered_soundSpel_20k.csv', index=False)
+## grep NOT --color=never coca_ordered_soundSpel_20k.csv> not_in_soundSpel.csv
+#
