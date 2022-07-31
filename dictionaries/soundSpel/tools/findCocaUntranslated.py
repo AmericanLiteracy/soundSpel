@@ -1,7 +1,8 @@
 '''
 Find words in Cocos dictionary that are not translated to soundSpel
+See https://docs.google.com/spreadsheets/d/1xk8jnP30QClKVPQVG6qb1amDb1RDD7atHM4Cd1sTJnQ
 
-Run with tools/findCocosUntranslatd.py
+Run with python tools/findCocosUntranslated.py
 '''
 
 import numpy as np
@@ -20,8 +21,7 @@ cocaRoot = coca['L1']
 cocaFreqPerMil = coca['coca'] 
 ssWordTO = ss['TO']
 ssWord = ss['SS']
-# using dictionary comprehension
-# to convert lists to dictionary
+# using dictionary comprehension to convert lists to dictionary
 ssDict = {ssWordTO[i]: ssWord[i] for i in range(len(ssWordTO))}
 
 cocaWordSS = []
@@ -50,8 +50,6 @@ for i in range(100,len(cocaWord)):
         else:
             cocaFreqNotFound.append(cocaFreqPerMil[i])
 
-
-
 df = pd.DataFrame()
 df['TO']  = cocaWordNotFound
 df['SS'] = cocaWordNotFoundBlank
@@ -60,11 +58,6 @@ df['freq per Mil']  = cocaFreqNotFound
 df['root if differs']  = cocaRootNotFound
 df.to_csv('workdir/coca_ordered_missing_soundSpel_20k.csv', index=False, header=True)
 
-#df = pd.DataFrame()
-#df['cocaWordNotFound']  = cocaWordNotFound
-#df['cocaWordNotFoundss']  = cocaWordNotFoundss
-#df.to_csv('workdir/coca_ordered_not_found_20k.csv', index=False)
-#
 #df = pd.DataFrame()
 #df['cocaOrder']  = cocaID
 #df['cocaWord']  = cocaWord
