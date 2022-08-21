@@ -9,9 +9,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-coca = pd.read_csv('../coca_100k_word_frequency/b1386_head20k.txt',delim_whitespace=True,encoding_errors='ignore')
+coca = pd.read_csv('../coca_100k_word_frequency/b1386_head60k.txt',delim_whitespace=True,encoding_errors='ignore')
 cocaCol = coca.columns
-ss = pd.read_csv('soundSpel.csv')
+ss = pd.read_csv('soundSpel.csv',low_memory=False)
 ssCol = ss.columns
 
 cocaID = coca['ID']
@@ -31,7 +31,11 @@ cocaWordNotFoundBlank = []
 cocaRootNotFound = []
 cocaIDNotFound = []
 cocaFreqNotFound = []
-for i in range(100,len(cocaWord)):
+for i in range(19001,len(cocaWord)):
+# skip hyphenated word
+    if cocaWord[i].find('-')>-1:
+        print('i,w1',i,cocaWord[i])
+        continue
     try:
         cocaWordSS.append(ssDict[cocaWord[i]])
     except:
